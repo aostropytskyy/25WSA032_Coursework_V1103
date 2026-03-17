@@ -11,13 +11,18 @@ void setup()
   Serial.begin(9600);
 }
 
-void collect_temperature_data()
+int collect_temperature_data()
 {
-  
+  int temp_store[300];
+  for (int i =0; i<300;i++){
+    temp_store[i] = analogRead(pinTempSensor);
+  }
+  return 0;
 }
 
 void loop()
 {
+  int x=0;
   int a = analogRead(pinTempSensor);
   float R = 1023.0/a-1.0;
   R = R0*R;
@@ -25,4 +30,9 @@ void loop()
   Serial.print("temperature = ");
   Serial.println(temperature);
   delay(1000);
+  collect_temperature_data();
+  x++;
+  if(x==300){
+    serial.println(collect_temperature_data());
+  }
 }
