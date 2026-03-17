@@ -4,9 +4,16 @@ const int B = 4275000; // B value of the thermistor
 const int R0 = 100000; // R0 = 100k
 const int pinTempSensor = A0; // Grove - Temperature Sensor connect to A0
 
+void collect_temperature_data();
+
 void setup()
 {
   Serial.begin(9600);
+}
+
+void collect_temperature_data()
+{
+  
 }
 
 void loop()
