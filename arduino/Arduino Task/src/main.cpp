@@ -14,8 +14,8 @@ void setup()
 
 int collect_temperature_data()
 {
-  int temp_store[300];
-  for (int i =0; i<300;i++){
+  int temp_store[180];
+  for (int i =0; i<180;i++){
     temp_store[i] = analogRead(pinTempSensor);
   }
   return 0;
